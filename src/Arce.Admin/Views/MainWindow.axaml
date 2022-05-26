@@ -1,0 +1,77 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Arce.Admin.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Arce.Admin.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Arce.Admin"
+        Background="Transparent"
+        TransparencyLevelHint="AcrylicBlur">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+  
+  <ExperimentalAcrylicBorder>
+               <ExperimentalAcrylicBorder.Material>
+                   <ExperimentalAcrylicMaterial
+                       BackgroundSource="Digger"
+                       TintColor="Black"
+                       TintOpacity="1"
+                       MaterialOpacity="0.65" />
+               </ExperimentalAcrylicBorder.Material>
+  <DockPanel>
+    <Rectangle Fill="Red" Height="50" DockPanel.Dock="Top"/>
+    <Border Background="Gray"
+            BorderBrush="Black"
+            BorderThickness="2"
+            CornerRadius="2"
+            Padding="2">
+      <StackPanel Width="100" DockPanel.Dock="Left" Spacing="5" VerticalAlignment="Bottom">
+        <Rectangle Fill="Red" Height="44"/>
+        <Rectangle Fill="Blue" Height="44"/>
+        <Rectangle Fill="Green" Height="44"/>
+        <Rectangle Fill="Orange" Height="44"/>
+      </StackPanel>
+    </Border>
+
+    <ScrollViewer>
+
+      <ItemsRepeater Items="{Binding Games}">
+        <ItemsRepeater.Layout>
+          <UniformGridLayout MinItemWidth="100"
+                             MinItemHeight="100"
+                             MinColumnSpacing="1"
+                             MinRowSpacing="5"
+                             ItemsStretch="Fill"
+                             ItemsJustification="Start"
+                             />
+        </ItemsRepeater.Layout>
+        
+        
+        <ItemsRepeater.ItemTemplate>
+          <DataTemplate DataType="{x:Type vm:GameBlockItem}">
+            <Border Background="Gray"
+                    BorderBrush="Black"
+                    BorderThickness="10"
+                    CornerRadius="10"
+                    Padding="5">
+              <Button Command="{Binding ClickCommand}">
+              <TextBlock Text="{Binding Name}"/>
+              </Button>
+            </Border>
+          </DataTemplate>
+        </ItemsRepeater.ItemTemplate>
+      </ItemsRepeater>
+
+    </ScrollViewer>
+
+  </DockPanel>
+  </ExperimentalAcrylicBorder>
+
+  
+
+</Window>
