@@ -4,6 +4,7 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.ReactiveUI;
 using ReactiveUI;
+using System;
 
 namespace Arce.Admin.Views {
     public partial class GameDataWindow : ReactiveWindow<GameDataViewModel> {
@@ -12,7 +13,7 @@ namespace Arce.Admin.Views {
 #if DEBUG
             //this.AttachDevTools();
 #endif
-            //this.WhenActivated(d => d(ViewModel.BuyMusicCommand.Subscribe(Close)));
+            this.WhenActivated(d => d(ViewModel!.SaveCommand.Subscribe(Close)));
         }
 
         private void InitializeComponent() {

@@ -8,22 +8,23 @@ using System.Windows.Input;
 
 namespace Arce.Admin.ViewModels {
     public class GameBlockItem : ViewModelBase {
-        public int Id { get; set; }
+        public long Id { get; init; }
         public string Name { get; set; }
 
         public ICommand ClickCommand { get; set; }
+        public ICommand DeleteCommand { get; set; }
 
 
 
 
         public GameBlockItem(string Name) : base() {
             this.Name = Name;
-            ClickCommand = default!;
         }
         public GameBlockItem() {
-            Id = 0;
+            //Id = 0;
             Name = default!;
             ClickCommand = default!;
+            DeleteCommand = default!;
         }
     }
 }
