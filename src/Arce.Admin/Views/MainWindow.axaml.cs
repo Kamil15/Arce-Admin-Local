@@ -20,7 +20,6 @@ namespace Arce.Admin.Views {
             var dialog = new GameDataWindow {
                 DataContext = interaction.Input
             };
-            
 
             var result = await dialog.ShowDialog<GameDataResultViewModel?>(this);
             interaction.SetOutput(result);

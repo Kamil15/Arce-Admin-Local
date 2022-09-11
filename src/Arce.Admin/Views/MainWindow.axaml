@@ -24,7 +24,7 @@
                        MaterialOpacity="0.65" />
                </ExperimentalAcrylicBorder.Material>
   <DockPanel>
-    <Rectangle Fill="Red" Height="50" DockPanel.Dock="Top"/>
+    <Rectangle Fill="Gray" Height="50" DockPanel.Dock="Top"/>
     <Border Background="Gray"
             BorderBrush="Black"
             BorderThickness="2"
@@ -33,7 +33,6 @@
       <StackPanel Width="100" DockPanel.Dock="Left" Spacing="5" VerticalAlignment="Bottom">
         <Button Command="{Binding RefreshCommand}" Padding="10" Height="45" Width="100">Refresh</Button>
         <Button Command="{Binding NewCommand}" Padding="10" Height="45" Width="100">New</Button>
-        <Rectangle Fill="Orange" Height="44"/>
       </StackPanel>
     </Border>
 
@@ -61,10 +60,10 @@
               <StackPanel>
                 <TextBlock Text="{Binding Name}"/>
                 <Button Command="{Binding ClickCommand}">
-                  Edytuj
+                  Edit
                 </Button>
                 <Button Command="{Binding DeleteCommand}">
-                  Usuń
+                  Remove
                 </Button>
               </StackPanel>
             </Border>
